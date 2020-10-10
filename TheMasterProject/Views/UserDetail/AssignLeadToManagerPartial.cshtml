@@ -1,0 +1,46 @@
+﻿@model TheMasterProject.Models.Buyer_Detail
+
+
+@using (Html.BeginForm("AssignLeadToManager", "UserDetail", FormMethod.Post))
+{
+    @*@Html.HiddenFor(model => model.AlreadyLoan)
+    @Html.HiddenFor(model => model.AadharCard)
+    @Html.HiddenFor(model => model.Address)
+    @Html.HiddenFor(model => model.BuyerId)
+    @Html.HiddenFor(model => model.BuyerName)
+    @Html.HiddenFor(model => model.CompanyName)
+    @Html.HiddenFor(model => model.currenStatus)
+    @Html.HiddenFor(model => model.EmploymentStatus)
+    @Html.HiddenFor(model => model.Gender)
+    @Html.HiddenFor(model => model.GrossAnnualIncome)
+    @Html.HiddenFor(model => model.GrossMonthlyIncome)
+    @Html.HiddenFor(model => model.MaritalStatus)
+    @Html.HiddenFor(model => model.MobileNo)
+    @Html.HiddenFor(model => model.PanCard)
+    @Html.HiddenFor(model => model.pincode)
+    @Html.HiddenFor(model => model.LeadPosition)
+    @Html.HiddenFor(model => model.TransferRequestStatus)*@
+    @Html.HiddenFor(model => model.BuyerId)
+    <div class="row">
+       
+            <div class="col-md-2" style="margin:auto">Assign</div>
+            <div class="col-md-6" style="margin:auto">
+                @Html.DropDownListFor(model => model.ManagerAssigned, (IEnumerable<SelectListItem>)ViewBag.Managers, new { @class = "form-control" })
+            </div>
+            <div class="col-md-4" style="margin:auto">To Lead: <b>@Model.BuyerId</b></div>
+
+
+    </div>
+    <div class="row">
+        
+            <div class="col-md-3"></div>
+            <div class="col-md-6"></div>
+            <div class="col-md-3">
+                <input type="submit" class="btn btn-primary" value="Update" />
+            </div>
+        </div>
+   
+
+}
+
+
